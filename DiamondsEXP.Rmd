@@ -1,0 +1,38 @@
+---
+title: "Diamonds"
+author: "Kyle Cooper"
+date: "2/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Reading the Excel File
+
+```{r}
+library(readxl)
+mydiamonds<-read_excel("diamonds.xlsx")
+```
+
+summary(mydiamonds)
+
+# Names of Variables
+
+```{r}
+names(mydiamonds)
+```
+
+# Top 6 Observations
+
+```{r}
+head(mydiamonds)
+```
+
+# New Variable
+```{r}
+mydiamonds$pricetable<-(mydiamonds$price+mydiamonds$table)
+```
+head(mydiamonds$pricetable)
+
